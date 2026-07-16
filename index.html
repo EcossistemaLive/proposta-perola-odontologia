@@ -3,207 +3,330 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proposta Executiva: IPO - Pérola Odontologia</title>
+  <title>Proposta Executiva: IPO - Pérola Odontologia | VIDI Consultoria</title>
+  <meta name="description" content="Proposta de Estruturação e Expansão do Instituto Pérola Odontologia — Business Plan, IA Embarcada e Modelo de Franquias.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     :root {
-      /* Identidade Oficial Vidi */
       --vidi-bg: #030508;
-      --vidi-surface: rgba(13, 17, 23, 0.7);
-      --vidi-surface-hover: rgba(20, 26, 35, 0.85);
+      --vidi-surface: rgba(13, 17, 23, 0.75);
+      --vidi-surface-hover: rgba(20, 26, 35, 0.90);
       --vidi-gold: #C5A059;
       --vidi-gold-light: #E2C882;
       --vidi-gold-dim: rgba(197, 160, 89, 0.1);
+      --vidi-gold-border: rgba(197, 160, 89, 0.25);
       --vidi-text: rgba(255, 255, 255, 0.95);
-      --vidi-text-muted: rgba(139, 149, 161, 0.8);
-      --vidi-border: rgba(255, 255, 255, 0.08);
+      --vidi-text-muted: rgba(165, 175, 191, 0.85);
+      --vidi-border: rgba(255, 255, 255, 0.07);
       --vidi-border-focus: rgba(197, 160, 89, 0.3);
-      --glass-blur: blur(16px);
+      --glass-blur: blur(20px);
       --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --green: #10b981;
+      --blue: #3b82f6;
+      --purple: #8b5cf6;
+      --orange: #f59e0b;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       background-color: var(--vidi-bg);
       color: var(--vidi-text);
       font-family: 'Inter', sans-serif;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     body::before {
       content: '';
       position: fixed;
       inset: 0;
-      background: 
-        radial-gradient(circle at 15% 15%, rgba(197, 160, 89, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(15, 28, 46, 0.45) 0%, transparent 50%);
+      background:
+        radial-gradient(ellipse at 10% 10%, rgba(197, 160, 89, 0.06) 0%, transparent 45%),
+        radial-gradient(ellipse at 90% 90%, rgba(10, 20, 40, 0.5) 0%, transparent 55%);
       z-index: -2;
+      pointer-events: none;
     }
 
-    h1, h2, h3, h4, .badge-text {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      color: var(--vidi-text);
-    }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; }
 
-    h1 { font-size: 2.8rem; margin-bottom: 1rem; color: var(--vidi-gold-light); line-height: 1.2;}
-    h2 { font-size: 1.8rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--vidi-border-focus); padding-bottom: 0.5rem; color: var(--vidi-gold); }
-    h3 { font-size: 1.3rem; margin-bottom: 1rem; color: var(--vidi-gold-light); font-family: 'Inter', sans-serif; font-weight: 600;}
-    
-    p, ul, ol { margin-bottom: 1.5rem; color: var(--vidi-text-muted); }
-    li { margin-bottom: 0.8rem; margin-left: 20px; }
+    h1 { font-size: 2.8rem; color: var(--vidi-gold-light); line-height: 1.2; margin-bottom: 1rem; }
+    h2 { font-size: 1.8rem; color: var(--vidi-gold); border-bottom: 1px solid var(--vidi-border-focus); padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+    h3 { font-size: 1.25rem; color: var(--vidi-gold-light); font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 0.8rem; }
+    h4 { font-size: 1.05rem; font-family: 'Inter', sans-serif; font-weight: 600; color: var(--vidi-text); margin-bottom: 0.5rem; }
 
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
+    p { color: var(--vidi-text-muted); margin-bottom: 1.2rem; }
+    ul, ol { color: var(--vidi-text-muted); margin-bottom: 1.2rem; padding-left: 0; list-style: none; }
+    li { padding-left: 1.5rem; margin-bottom: 0.6rem; position: relative; }
+    li::before { content: '›'; position: absolute; left: 0; color: var(--vidi-gold); font-weight: 700; font-size: 1.1rem; }
+    strong { color: var(--vidi-text); font-weight: 600; }
 
+    .container { max-width: 1000px; margin: 0 auto; padding: 60px 24px; }
+
+    /* ── HEADER ── */
     .header-cover {
       text-align: center;
-      margin-bottom: 60px;
-      padding: 60px 20px;
+      margin-bottom: 64px;
+      padding: 72px 32px 60px;
       background: var(--vidi-surface);
       backdrop-filter: var(--glass-blur);
       -webkit-backdrop-filter: var(--glass-blur);
-      border-radius: 16px;
+      border-radius: 20px;
       border: 1px solid var(--vidi-border);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      position: relative;
+      overflow: hidden;
+    }
+    .header-cover::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--vidi-gold), transparent);
+    }
+    .vidi-logo { margin-bottom: 28px; display: inline-block; width: 130px; }
+    .header-sub { font-family: 'Inter', sans-serif; font-weight: 300; font-size: 1.15rem; color: var(--vidi-text-muted); margin-top: 8px; }
+    .header-tags { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--vidi-gold-dim);
+      border: 1px solid var(--vidi-gold-border);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--vidi-gold-light);
+      letter-spacing: 0.5px;
     }
 
-    .vidi-logo {
-      margin-bottom: 20px;
-      display: inline-block;
-      width: 140px;
-    }
-
+    /* ── CARDS ── */
     .section-card {
       background: var(--vidi-surface);
       backdrop-filter: var(--glass-blur);
       -webkit-backdrop-filter: var(--glass-blur);
       border: 1px solid var(--vidi-border);
-      border-radius: 16px;
-      padding: 40px;
-      margin-bottom: 40px;
-      transition: all 0.4s var(--ease);
+      border-radius: 20px;
+      padding: 44px;
+      margin-bottom: 44px;
+      transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
     }
-    
-    .section-card:hover {
-      background: var(--vidi-surface-hover);
-      border-color: var(--vidi-border-focus);
-      transform: translateY(-2px);
-    }
+    .section-card:hover { border-color: var(--vidi-border-focus); transform: translateY(-2px); }
 
     .mapca-badge {
       display: inline-block;
       background: var(--vidi-gold-dim);
       color: var(--vidi-gold);
-      padding: 6px 16px;
+      padding: 5px 16px;
       border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 0.78rem;
+      font-weight: 700;
       font-family: 'Inter', sans-serif;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
-      border: 1px solid var(--vidi-border-focus);
+      letter-spacing: 1.5px;
+      margin-bottom: 18px;
+      border: 1px solid var(--vidi-gold-border);
     }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      margin-bottom: 1.5rem;
-    }
-    @media(min-width: 768px) {
+    /* ── GRIDS ── */
+    .grid-2 { display: grid; grid-template-columns: 1fr; gap: 18px; margin-bottom: 1.5rem; }
+    .grid-3 { display: grid; grid-template-columns: 1fr; gap: 18px; margin-bottom: 1.5rem; }
+    @media(min-width: 640px) {
       .grid-2 { grid-template-columns: 1fr 1fr; }
+      .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
     }
 
     .card-item {
-      background: rgba(0, 0, 0, 0.3);
-      padding: 24px;
+      background: rgba(0,0,0,0.28);
+      padding: 22px;
       border-radius: 12px;
       border-left: 3px solid var(--vidi-gold);
+      transition: background 0.25s;
     }
-    .card-item h4 {
+    .card-item:hover { background: rgba(197, 160, 89, 0.04); }
+    .card-item h4 { display: flex; align-items: center; gap: 8px; color: var(--vidi-gold-light); margin-bottom: 10px; }
+
+    /* ── ETAPAS ── */
+    .fase-item {
+      background: rgba(0,0,0,0.22);
+      border: 1px solid var(--vidi-border);
+      border-radius: 14px;
+      padding: 32px;
+      margin-bottom: 22px;
+    }
+    .fase-header {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-      color: var(--vidi-gold-light);
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      font-size: 1.1rem;
+      gap: 16px;
+      margin-bottom: 20px;
     }
-
-    .icon-wrapper {
-      display: inline-flex;
+    .fase-header h3 {
+      color: var(--vidi-gold);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 0;
+    }
+    .fase-num {
+      display: flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
       background: var(--vidi-gold-dim);
-      border-radius: 8px;
-      color: var(--vidi-gold);
-    }
-
-    .fase-item {
-      background: rgba(0,0,0,0.2);
-      border: 1px solid var(--vidi-border);
+      border: 1px solid var(--vidi-gold-border);
       border-radius: 12px;
-      padding: 30px;
-      margin-bottom: 20px;
-    }
-    .fase-item h4 {
       color: var(--vidi-gold);
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      font-size: 1.3rem;
-      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 1rem;
       font-family: 'Playfair Display', serif;
     }
 
+    /* ── SPRINT CARDS ── */
+    .sprint-list { display: flex; flex-direction: column; gap: 14px; margin: 18px 0; }
+    .sprint-card {
+      display: flex;
+      gap: 16px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 10px;
+      padding: 18px 20px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .sprint-num {
+      display: flex; align-items: center; justify-content: center;
+      min-width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--vidi-gold) 0%, var(--vidi-gold-light) 100%);
+      border-radius: 8px;
+      color: #030508;
+      font-weight: 700;
+      font-size: 0.85rem;
+      font-family: 'Inter', sans-serif;
+    }
+    .sprint-content h4 { color: var(--vidi-gold-light); font-size: 0.95rem; margin-bottom: 4px; }
+    .sprint-content p { font-size: 0.88rem; margin-bottom: 0; line-height: 1.5; }
+
+    /* ── DEPT CHIP ── */
+    .dept-chip {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.76rem; font-weight: 600; font-family: 'Inter', sans-serif;
+      padding: 3px 10px; border-radius: 12px;
+      margin-right: 6px; margin-bottom: 6px;
+    }
+    .chip-strategy { background: rgba(197,160,89,0.12); color: var(--vidi-gold); border: 1px solid var(--vidi-gold-border); }
+    .chip-finance  { background: rgba(59,130,246,0.12); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
+    .chip-marketing{ background: rgba(245,158,11,0.12); color: #fcd34d; border: 1px solid rgba(245,158,11,0.3); }
+    .chip-tech     { background: rgba(139,92,246,0.12); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3); }
+    .chip-hr       { background: rgba(16,185,129,0.12); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
+    .chip-legal    { background: rgba(239,68,68,0.12); color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+
+    /* ── ENTREGAVEL ── */
+    .entregavel-box {
+      background: rgba(197,160,89,0.04);
+      border: 1px solid var(--vidi-gold-border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-top: 14px;
+      font-size: 0.9rem;
+    }
+    .entregavel-box .label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: var(--vidi-gold);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    /* ── IA MODULES ── */
+    .ia-module {
+      background: rgba(0,0,0,0.3);
+      border-radius: 14px;
+      padding: 24px;
+      border-top: 3px solid transparent;
+    }
+    .ia-module.green  { border-top-color: var(--green); }
+    .ia-module.blue   { border-top-color: var(--blue); }
+    .ia-module.purple { border-top-color: var(--purple); }
+    .ia-module h4 { font-size: 1.05rem; margin-bottom: 8px; }
+    .ia-module.green  h4 { color: var(--green); }
+    .ia-module.blue   h4 { color: var(--blue); }
+    .ia-module.purple h4 { color: var(--purple); }
+
+    .flow-step {
+      display: flex; gap: 10px; align-items: flex-start;
+      margin-bottom: 8px; font-size: 0.88rem;
+    }
+    .flow-step .num {
+      min-width: 22px; height: 22px;
+      background: var(--vidi-gold-dim); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--vidi-gold); font-size: 0.75rem; font-weight: 700;
+      margin-top: 2px;
+    }
+    .flow-step p { margin-bottom: 0; font-size: 0.88rem; }
+
+    /* ── RESPONSAVEL ── */
+    .responsavel {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.8rem; color: var(--vidi-text-muted);
+      margin-top: 10px;
+    }
+    .responsavel i { color: var(--vidi-gold); }
+
+    /* ── PRECO BOX ── */
     .preco-box {
-      background: linear-gradient(145deg, rgba(197, 160, 89, 0.05) 0%, rgba(0, 0, 0, 0.4) 100%);
-      border: 1px solid var(--vidi-border-focus);
-      padding: 32px;
-      border-radius: 12px;
+      background: linear-gradient(145deg, rgba(197,160,89,0.06) 0%, rgba(0,0,0,0.5) 100%);
+      border: 1px solid var(--vidi-gold-border);
+      padding: 40px 32px;
+      border-radius: 16px;
       text-align: center;
       margin-top: 20px;
     }
     .currency {
       font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 2.2rem;
+      font-weight: 800;
+      font-size: 3rem;
       color: var(--vidi-gold-light);
       display: block;
-      margin: 15px 0;
+      margin: 16px 0;
+      letter-spacing: -1px;
     }
+    .scope-items { display: flex; flex-direction: column; gap: 8px; margin: 20px 0; }
+    .scope-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.9rem; color: var(--vidi-text-muted);
+    }
+    .scope-item i { color: var(--vidi-gold); }
 
+    /* ── FOOTER ── */
     .footer-vidi {
       text-align: center;
-      margin-top: 60px;
+      margin-top: 72px;
       padding-top: 40px;
       border-top: 1px solid var(--vidi-border);
       color: var(--vidi-text-muted);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
     }
-    .footer-vidi span {
-      color: var(--vidi-gold);
-      font-weight: 600;
-      letter-spacing: 1px;
+    .footer-vidi .brand { color: var(--vidi-gold); font-weight: 700; letter-spacing: 2px; font-family: 'Playfair Display', serif; font-size: 1.1rem; }
+
+    /* ── DIVIDER ── */
+    .divider { height: 1px; background: var(--vidi-border); margin: 24px 0; }
+
+    @media (max-width: 600px) {
+      .container { padding: 32px 16px; }
+      .section-card { padding: 28px 20px; }
+      h1 { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
-
   <div class="container">
-    
+
+    <!-- ══ CAPA ══ -->
     <div class="header-cover">
       <div class="vidi-logo">
         <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
@@ -217,127 +340,326 @@
         </svg>
       </div>
       <h1>Proposta de Estruturação e Expansão</h1>
-      <h2 style="border: none; margin-bottom: 0; font-family: 'Inter', sans-serif; font-weight: 300;">Instituto Pérola Odontologia (IPO)</h2>
-    </div>
-
-    <!-- M - Mapeamento -->
-    <div class="section-card">
-      <div class="mapca-badge">M. Mapeamento & Análise</div>
-      <h2>O Cenário e a Oportunidade</h2>
-      <p>A Clínica Pérola possui um modelo clínico validado pela excelência e pela ausência de retrabalho. Porém, para transformar essa expertise em uma rede de franquias ou licenciamento (IPO), é necessário sair do modelo de "gestão tácita" e construir bases sólidas, metrificadas e escaláveis.</p>
-      
-      <div class="grid-2">
-        <div class="card-item">
-          <h4>Dores Atuais (Mercado)</h4>
-          <ul>
-            <li>Falta de formalização de processos operacionais de negócio.</li>
-            <li>Gestão dependente do fator humano (gargalos em RH e SDR).</li>
-            <li>Alto índice de retrabalho em clínicas concorrentes.</li>
-          </ul>
-        </div>
-        <div class="card-item">
-          <h4>Oportunidade (O Negócio)</h4>
-          <ul>
-            <li>Criação de uma rede de clínicas/franquias padronizadas.</li>
-            <li>Uso de Inteligência Artificial para operar a gestão e captação de pacientes de forma autônoma.</li>
-          </ul>
-        </div>
+      <p class="header-sub">Instituto Pérola Odontologia (IPO) — Projeto M.A.P.C.A.</p>
+      <div class="header-tags">
+        <span class="tag"><i data-lucide="layers" style="width:13px;height:13px;"></i> Business Plan</span>
+        <span class="tag"><i data-lucide="bot" style="width:13px;height:13px;"></i> IA Embarcada</span>
+        <span class="tag"><i data-lucide="network" style="width:13px;height:13px;"></i> Modelo de Franquias</span>
+        <span class="tag"><i data-lucide="shield" style="width:13px;height:13px;"></i> Arquitetura Societária</span>
       </div>
     </div>
 
-    <!-- A - Arquitetura -->
+    <!-- ══ M — MAPEAMENTO ══ -->
+    <div class="section-card">
+      <div class="mapca-badge">M. Mapeamento &amp; Análise</div>
+      <h2>O Diagnóstico Inicial</h2>
+      <p>Antes de desenhar qualquer solução, a VIDI aplica o <strong>Protocolo de Diagnóstico M.A.P.C.A.</strong> — uma análise estruturada que mapeia o estado real do negócio: suas forças, fragilidades, ameaças e o tamanho da oportunidade a ser capturada. Esse processo evita que decisões estratégicas sejam tomadas sobre premissas equivocadas.</p>
+
+      <div class="grid-2">
+        <div class="card-item">
+          <h4><i data-lucide="alert-circle" style="color:#f87171; width:16px; height:16px;"></i> Dores Mapeadas (Situação Atual)</h4>
+          <ul>
+            <li><strong>Gestão tácita:</strong> O know-how da Pérola existe nas pessoas, não nos processos — o que impede replicação em escala.</li>
+            <li><strong>Ausência de Business Plan formal:</strong> Sem um plano estruturado, investidores, franqueados e bancos não financiam expansão.</li>
+            <li><strong>Dependência humana em RH e SDR:</strong> Captação de pacientes e talentos ainda dependem de pessoas, criando gargalos.</li>
+            <li><strong>Risco de diluição da marca:</strong> Crescimento sem padronização compromete a excelência clínica que é o diferencial da Pérola.</li>
+          </ul>
+        </div>
+        <div class="card-item">
+          <h4><i data-lucide="trending-up" style="color:#34d399; width:16px; height:16px;"></i> Oportunidade Estratégica</h4>
+          <ul>
+            <li><strong>Mercado odontológico carente de qualidade:</strong> Alto índice de retrabalho cria um vácuo que a Pérola pode ocupar com uma rede padronizada.</li>
+            <li><strong>Método validado como ativo:</strong> A metodologia da Dra. Carol é um ativo de altíssimo valor que pode ser licenciado ou franqueado.</li>
+            <li><strong>IA como vantagem competitiva:</strong> Clínicas gerenciadas por IA reduzem custo de aquisição de paciente em até 60%.</li>
+            <li><strong>Instituto (IPO) como marca guarda-chuva:</strong> Permite ensino, certificação, franquias e licenciamento em um único ecossistema.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entregavel-box">
+        <span class="label">📋 Como a VIDI atua nessa etapa</span>
+        <p style="margin-bottom: 0; font-size: 0.9rem;">Realizamos entrevistas estruturadas com a diretoria, aplicamos questionários de maturidade de negócio e executamos análise de benchmarking com redes odontológicas referência no Brasil. O resultado é um <strong>Relatório de Diagnóstico</strong> que serve de base para toda a construção do Business Plan.</p>
+      </div>
+    </div>
+
+    <!-- ══ A — ARQUITETURA DO PLANO ══ -->
     <div class="section-card">
       <div class="mapca-badge">A. Arquitetura do Plano</div>
       <h2>Cronograma e Engenharia do Projeto</h2>
-      <p>O projeto será desenvolvido em 3 grandes fases, integrando construção estratégica, inovação tecnológica e estruturação legal:</p>
-      
+      <p>O projeto é estruturado em <strong>3 Etapas principais</strong>, cada uma com metodologia própria, equipe dedicada, entregáveis tangíveis e responsável técnico definido. Não há etapa "caixa-preta" — cada reunião tem pauta, objetivo e produto ao final.</p>
+
+      <!-- ────── ETAPA 01 ────── -->
       <div class="fase-item">
-        <h4><span class="icon-wrapper"><i data-lucide="file-text"></i></span> Etapa 01: Estruturação do Business Plan (Roadmap Ágil)</h4>
-        <p>Desenvolvimento completo do Plano de Negócio abrangendo estratégia, marketing, finanças e processos. O trabalho será executado em formato de <strong>Sprints</strong> através de 8 encontros executivos:</p>
-        <div style="margin-left: 20px; border-left: 2px solid var(--vidi-gold-dim); padding-left: 20px; margin-top: 15px;">
-          <p style="margin-bottom: 5px;"><strong style="color:var(--vidi-gold);">Sprints 1 a 3 (Descoberta & Mercado):</strong> Pesquisa de concorrência, mapeamento de dores da clínica (Cenário Atual) e definição exata das Personas (Franqueado e Paciente).</p>
-          <p style="margin-bottom: 5px;"><strong style="color:var(--vidi-gold);">Sprints 4 e 5 (Negócio & Marketing):</strong> Fechamento da Matriz SWOT, Proposta de Valor, Plano de Atração e precificação dos serviços IPO.</p>
-          <p style="margin-bottom: 5px;"><strong style="color:var(--vidi-gold);">Sprints 6 e 7 (Engenharia Financeira):</strong> Projeções financeiras, DRE Projetado (5 anos), cálculo do Ponto de Equilíbrio e Payback (ROI) do projeto.</p>
-          <p style="margin-bottom: 15px;"><strong style="color:var(--vidi-gold);">Sprint 8 (Go-Live):</strong> Entrega do Business Plan documentado (Book Final) e Kick-off oficial da formatação de Franquias/Licenciamento.</p>
-          <p style="font-size: 0.95rem; opacity: 0.9;"><em>🎯 KPIs (Morgan): Redução drástica no CAC, aumento do LTV do paciente e previsibilidade total de fluxo de caixa para expansão da rede.</em></p>
+        <div class="fase-header">
+          <div class="fase-num">01</div>
+          <h3>Estruturação do Business Plan</h3>
         </div>
+        <p>O Business Plan é o alicerce de toda a expansão. Não se trata de um documento burocrático — é o <strong>GPS do negócio</strong>: ele diz onde você está, onde quer chegar e o caminho mais eficiente para isso, com os números que provam que a jornada é viável.</p>
+
+        <p>A metodologia da VIDI segmenta o trabalho em <strong>8 encontros executivos (Sprints)</strong>, com duração média de 2 horas cada, conduzidos por <strong>Luiz Portal (Estratégia) e Kelvin (Finanças)</strong>:</p>
+
+        <div class="sprint-list">
+          <div class="sprint-card">
+            <div class="sprint-num">S1</div>
+            <div class="sprint-content">
+              <h4>Imersão no Negócio &amp; Diagnóstico</h4>
+              <p>Entrevistas com a diretoria, mapeamento dos processos operacionais atuais, levantamento de dados financeiros históricos e identificação dos gargalos críticos que precisam ser resolvidos antes da expansão.</p>
+              <div style="margin-top: 8px;">
+                <span class="dept-chip chip-strategy">Estratégia</span>
+                <span class="dept-chip chip-finance">Financeiro</span>
+              </div>
+            </div>
+          </div>
+          <div class="sprint-card">
+            <div class="sprint-num">S2</div>
+            <div class="sprint-content">
+              <h4>Análise de Mercado &amp; Benchmarking</h4>
+              <p>Pesquisa aprofundada do mercado odontológico regional e nacional: tamanho do mercado, concorrentes diretos, precificação praticada, tendências de expansão e diferenciais competitivos passíveis de proteção.</p>
+              <div style="margin-top: 8px;">
+                <span class="dept-chip chip-strategy">Estratégia</span>
+                <span class="dept-chip chip-marketing">Marketing</span>
+              </div>
+            </div>
+          </div>
+          <div class="sprint-card">
+            <div class="sprint-num">S3</div>
+            <div class="sprint-content">
+              <h4>Definição de Personas &amp; Proposta de Valor</h4>
+              <p>Quem é o paciente ideal? Quem é o franqueado/licenciado ideal? A VIDI define as <strong>Personas detalhadas</strong> (perfil demográfico, comportamental e financeiro) e estrutura a Proposta de Valor da rede IPO para cada público-alvo.</p>
+              <div style="margin-top: 8px;">
+                <span class="dept-chip chip-marketing">Marketing</span>
+                <span class="dept-chip chip-strategy">Estratégia</span>
+              </div>
+            </div>
+          </div>
+          <div class="sprint-card">
+            <div class="sprint-num">S4</div>
+            <div class="sprint-content">
+              <h4>Matriz SWOT &amp; Posicionamento Estratégico</h4>
+              <p>Com dados em mãos, construímos a Matriz SWOT completa (Forças, Fraquezas, Oportunidades e Ameaças) e definimos o <strong>posicionamento estratégico</strong> da Pérola no mercado: qual segmento atacar, qual mensagem comunicar e como diferenciar a rede das concorrentes.</p>
+              <div style="margin-top: 8px;">
+                <span class="dept-chip chip-strategy">Estratégia</span>
+              </div>
+            </div>
+          </div>
+          <div class="sprint-card">
+            <div class="sprint-num">S5</div>
+            <div class="sprint-content">
+              <h4>Mix de Marketing, Produtos &amp; Plano de Atração</h4>
+              <p>Estruturação dos <strong>5 P's</strong> (Produto, Preço, Praça, Promoção, Pessoas) aplicados ao contexto clínico e de franquia. Definição dos canais de captação de pacientes, estratégia de redes sociais, posicionamento de marca do IPO e funil de captação de novos franqueados.</p>
+              <div style="margin-top: 8px;">
+                <span class="dept-chip chip-marketing">Marketing</span>
+                <span class="dept-chip chip-hr">Pessoas</span>
+              </div>
+            </div>
+          </div>
+          <div class="sprint-card">
+            <div class="sprint-num">S6</div>
+            <div class="sprint-content">
+              <h4>Modelagem Financeira — Estrutura de Custos</h4>
+              <p>Mapeamento completo dos custos fixos e variáveis da clínica matriz, custo de abertura de uma unidade franqueada (CAPEX), custo operacional mensal (OPEX) e estruturação da planilha de <strong>Ponto de Equilíbrio</strong> por unidade. Aqui respondemos: "Quando a franqueada começa a dar lucro?"</p>
+              <div style="margin-top: 8px;">
+                <span class="dept-chip chip-finance">Financeiro</span>
+              </div>
+            </div>
+          </div>
+          <div class="sprint-card">
+            <div class="sprint-num">S7</div>
+            <div class="sprint-content">
+              <h4>Projeções de Receita, DRE &amp; Cálculo de Payback</h4>
+              <p>Construção do <strong>DRE Projetado para 5 anos</strong> (cenários conservador, realista e otimista), projeção do Fluxo de Caixa da rede e cálculo do <strong>ROI e Payback</strong> para o investidor-franqueado. Esse sprint entrega os números que convencem bancos, investidores e os próprios sócios.</p>
+              <div style="margin-top: 8px;">
+                <span class="dept-chip chip-finance">Financeiro</span>
+                <span class="dept-chip chip-strategy">Estratégia</span>
+              </div>
+            </div>
+          </div>
+          <div class="sprint-card">
+            <div class="sprint-num">S8</div>
+            <div class="sprint-content">
+              <h4>Go-Live: Entrega do Book Final &amp; Kick-off da Expansão</h4>
+              <p>Apresentação formal do <strong>Business Plan completo</strong> (documento executivo com todos os capítulos) para a diretoria. Validação, ajustes e aprovação. Seguida do kick-off imediato das Etapas 02 e 03 do projeto.</p>
+              <div style="margin-top: 8px;">
+                <span class="dept-chip chip-strategy">Estratégia</span>
+                <span class="dept-chip chip-finance">Financeiro</span>
+                <span class="dept-chip chip-legal">Jurídico</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="entregavel-box">
+          <span class="label">📦 Entregáveis da Etapa 01</span>
+          <div class="grid-2" style="margin-bottom: 0;">
+            <ul style="margin-bottom: 0;">
+              <li>Relatório de Diagnóstico e Benchmarking</li>
+              <li>Personas documentadas (Paciente &amp; Franqueado)</li>
+              <li>Matriz SWOT e Posicionamento de Marca</li>
+              <li>Plano de Marketing e Funil de Captação</li>
+            </ul>
+            <ul style="margin-bottom: 0;">
+              <li>Planilha de Ponto de Equilíbrio por Unidade</li>
+              <li>DRE Projetado — 5 anos (3 cenários)</li>
+              <li>Cálculo de Payback e ROI</li>
+              <li><strong>Business Plan Executivo (Book Final)</strong></li>
+            </ul>
+          </div>
+        </div>
+        <div class="responsavel"><i data-lucide="user" style="width:14px;height:14px;"></i> Responsáveis VIDI: Luiz Portal (Estratégia) &amp; Kelvin (Financeiro)</div>
       </div>
 
+      <!-- ────── ETAPA 02 ────── -->
       <div class="fase-item">
-        <h4><span class="icon-wrapper"><i data-lucide="bot"></i></span> Etapa 02: Arquitetura do Ecossistema de IA</h4>
-        <p>Esqueça os antigos manuais maçantes de procedimentos. A excelência da Pérola será padronizada e operada por um <strong>Ecossistema de Inteligência Artificial</strong> proprietário, projetado sob medida (IA Embarcada):</p>
-        <div class="grid-2" style="margin-top: 15px; margin-bottom: 0;">
-          <div class="card-item" style="padding: 15px; border-left-color: #10b981;">
-            <h4 style="color:#10b981; font-size: 1rem;"><i data-lucide="message-square"></i> Agente SDR (Atendimento)</h4>
-            <p style="font-size: 0.9rem; margin-bottom: 0;">Qualificação automática de <em>leads</em> (WhatsApp/CRM), respostas instantâneas, roteamento inteligente e agendamento 24/7 sem atrito humano.</p>
+        <div class="fase-header">
+          <div class="fase-num">02</div>
+          <h3>Implantação do Ecossistema de IA Embarcada</h3>
+        </div>
+        <p>A IA Embarcada não é um chatbot genérico. É um <strong>ecossistema de agentes inteligentes treinados com o DNA da Pérola</strong> — sua linguagem, seus processos e seus critérios — para operar de forma autônoma e permanente, como se fossem colaboradores digitais que nunca faltam, nunca ficam cansados e escalam com a rede.</p>
+
+        <div class="grid-3" style="margin-top: 20px;">
+          <div class="ia-module green">
+            <h4><i data-lucide="message-square" style="width:16px; height:16px; margin-right: 6px;"></i> Agente SDR — Atendimento &amp; Captação</h4>
+            <p style="font-size: 0.88rem; margin-bottom: 12px;"><strong style="color: var(--green);">O que faz:</strong> Opera o funil de captação de pacientes 24 horas por dia, 7 dias por semana, sem intervenção humana para as etapas de triagem e agendamento.</p>
+            <div class="flow-step"><div class="num">1</div><p>Recebe o <em>lead</em> via WhatsApp, Instagram DM ou formulário web.</p></div>
+            <div class="flow-step"><div class="num">2</div><p>Qualifica o interesse (procedimento desejado, urgência, localização).</p></div>
+            <div class="flow-step"><div class="num">3</div><p>Apresenta opções, tira dúvidas e agenda a consulta na agenda digital.</p></div>
+            <div class="flow-step"><div class="num">4</div><p>Envia confirmações, lembretes e reativa pacientes inativos automaticamente.</p></div>
           </div>
-          <div class="card-item" style="padding: 15px; border-left-color: #3b82f6;">
-            <h4 style="color:#3b82f6; font-size: 1rem;"><i data-lucide="users"></i> Agente de RH (Talentos)</h4>
-            <p style="font-size: 0.9rem; margin-bottom: 0;">Triagem autônoma de currículos, agendamento de entrevistas e análise comportamental/técnica de novos profissionais da rede IPO.</p>
+          <div class="ia-module blue">
+            <h4><i data-lucide="users" style="width:16px; height:16px; margin-right: 6px;"></i> Agente de RH — Triagem &amp; Talentos</h4>
+            <p style="font-size: 0.88rem; margin-bottom: 12px;"><strong style="color: var(--blue);">O que faz:</strong> Assume o processo seletivo da rede IPO, garantindo que os franqueados tenham acesso a um processo de contratação rápido, padronizado e aderente à cultura da Pérola.</p>
+            <div class="flow-step"><div class="num">1</div><p>Recebe candidaturas e realiza triagem por perfil comportamental e técnico.</p></div>
+            <div class="flow-step"><div class="num">2</div><p>Aplica testes e questionários de aderência cultural de forma automática.</p></div>
+            <div class="flow-step"><div class="num">3</div><p>Agenda entrevistas com o responsável da unidade franqueada.</p></div>
+            <div class="flow-step"><div class="num">4</div><p>Envia relatório de perfil do candidato antes da entrevista humana.</p></div>
           </div>
-          <div class="card-item" style="padding: 15px; border-left-color: #8b5cf6; grid-column: 1 / -1;">
-            <h4 style="color:#8b5cf6; font-size: 1rem;"><i data-lucide="cpu"></i> Orquestração & Segurança (LGPD)</h4>
-            <p style="font-size: 0.9rem; margin-bottom: 0;">Servidor centralizado e blindado. A IA extrai e monitora os indicadores do Business Plan em tempo real, alertando a diretoria sobre desvios operacionais e operando como um "conselheiro executivo digital" para os franqueados.</p>
+          <div class="ia-module purple">
+            <h4><i data-lucide="cpu" style="width:16px; height:16px; margin-right: 6px;"></i> Orquestrador de Gestão &amp; Business Plan</h4>
+            <p style="font-size: 0.88rem; margin-bottom: 12px;"><strong style="color: var(--purple);">O que faz:</strong> Monitora os KPIs da rede em tempo real e age como um <em>"conselheiro executivo digital"</em>, alertando a diretoria sempre que um indicador do Business Plan desviar da rota.</p>
+            <div class="flow-step"><div class="num">1</div><p>Integra dados do sistema de gestão (ERP/CRM) da clínica.</p></div>
+            <div class="flow-step"><div class="num">2</div><p>Monitora faturamento, CAC, LTV e taxa de ocupação das agendas.</p></div>
+            <div class="flow-step"><div class="num">3</div><p>Gera relatórios executivos automáticos (semanal/mensal).</p></div>
+            <div class="flow-step"><div class="num">4</div><p>Alertas proativos quando indicadores fogem do Business Plan.</p></div>
           </div>
         </div>
+
+        <div class="entregavel-box">
+          <span class="label">📦 Entregáveis da Etapa 02</span>
+          <ul style="margin-bottom: 0;">
+            <li>Agente SDR configurado, treinado e integrado ao WhatsApp e agenda da clínica</li>
+            <li>Agente de RH com banco de questões e fluxo de triagem personalizado para a Pérola</li>
+            <li>Dashboard executivo de KPIs com alertas automáticos para a diretoria</li>
+            <li>Documentação de uso e manual de auditoria dos agentes (Compliance LGPD)</li>
+          </ul>
+        </div>
+        <div class="responsavel"><i data-lucide="user" style="width:14px;height:14px;"></i> Responsáveis VIDI: Equipe de Inovação &amp; Tecnologia VIDI</div>
       </div>
 
+      <!-- ────── ETAPA 03 ────── -->
       <div class="fase-item">
-        <h4><span class="icon-wrapper"><i data-lucide="network"></i></span> Etapa 03: Formatação Jurídica da Expansão</h4>
-        <p>Apoio na definição e execução da arquitetura societária do Instituto Pérola, definindo o modelo ideal (Franquia, Licenciamento de Marca ou Joint Venture), garantindo a proteção dos ativos e a blindagem jurídica da matriz perante as normas do CFO.</p>
+        <div class="fase-header">
+          <div class="fase-num">03</div>
+          <h3>Formatação Jurídica &amp; Arquitetura de Expansão</h3>
+        </div>
+        <p>Com o Business Plan aprovado e a operação auxiliada pela IA, é chegado o momento de construir a <strong>armadura jurídica e societária</strong> que vai proteger a marca, o método e os interesses da Pérola ao expandir para múltiplas unidades. A VIDI apoia a diretoria na definição e estruturação do modelo mais adequado ao perfil do negócio.</p>
+
+        <div class="grid-2">
+          <div class="card-item" style="border-left-color: #f87171;">
+            <h4 style="color: #f87171;"><i data-lucide="file-check" style="width:15px;height:15px;"></i> Modelo de Franquia (ABF)</h4>
+            <p style="font-size: 0.88rem;">Para quando a Pérola quiser vender o <em>"direito de operar"</em> a marca e o método. Inclui estruturação da <strong>COF (Circular de Oferta de Franquia)</strong>, royalties, taxa de franquia e padrão operacional da rede.</p>
+            <ul style="font-size: 0.85rem; margin-bottom: 0;">
+              <li>Maior controle operacional sobre as unidades</li>
+              <li>Fluxo de receita recorrente via royalties</li>
+              <li>Regido pela Lei de Franquias (Lei 13.966/2019)</li>
+            </ul>
+          </div>
+          <div class="card-item" style="border-left-color: #60a5fa;">
+            <h4 style="color: #60a5fa;"><i data-lucide="handshake" style="width:15px;height:15px;"></i> Licenciamento de Marca &amp; Método</h4>
+            <p style="font-size: 0.88rem;">Para quando a Pérola quiser licenciar o uso do nome e da metodologia para clínicos independentes sem a rigidez do modelo de franquia. Estruturação do <strong>Contrato de Licença de Uso</strong>.</p>
+            <ul style="font-size: 0.85rem; margin-bottom: 0;">
+              <li>Menor investimento inicial para expandir</li>
+              <li>Mais flexibilidade ao licenciado</li>
+              <li>Receita via taxa de licença e treinamentos</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="entregavel-box">
+          <span class="label">📦 Entregáveis da Etapa 03</span>
+          <ul style="margin-bottom: 0;">
+            <li>Definição do modelo ideal de expansão (Franquia vs. Licenciamento) baseada nos dados do Business Plan</li>
+            <li>Estrutura societária da holding IPO e das unidades parceiras</li>
+            <li>Minuta da COF (Circular de Oferta de Franquia) ou Contrato de Licença de Uso</li>
+            <li>Registro e proteção da marca "Instituto Pérola Odontologia" no INPI</li>
+          </ul>
+        </div>
+        <div class="responsavel"><i data-lucide="user" style="width:14px;height:14px;"></i> Responsáveis VIDI: Luiz Portal (Estratégia) &amp; Assessoria Jurídica</div>
       </div>
     </div>
 
-    <!-- C - Construção -->
+    <!-- ══ C — CONSTRUÇÃO ══ -->
     <div class="section-card">
       <div class="mapca-badge">C. Construção</div>
-      <h2>Artefatos e Entregáveis do Business Plan</h2>
-      <p>Ao longo da Etapa 01, os seguintes artefatos documentais serão construídos e entregues à diretoria da Pérola, formando a base do <strong>Business Plan Oficial</strong>:</p>
-      
-      <div class="grid-2">
+      <h2>Sumário Executivo dos Entregáveis</h2>
+      <p>Ao final das 3 Etapas, a Pérola terá em mãos um conjunto completo de ativos de negócio — tangíveis, documentados e prontos para apresentação a investidores, bancos e candidatos a franqueados.</p>
+
+      <div class="grid-3">
         <div class="card-item">
-          <h4><i data-lucide="bar-chart-2" style="color: var(--vidi-gold); margin-right: 8px;"></i> 1. Estudo de Mercado</h4>
-          <p>Definição das Personas (paciente e franqueado) e mapeamento profundo dos concorrentes diretos.</p>
+          <h4><i data-lucide="bar-chart-2" style="color: var(--vidi-gold); width:15px; height:15px;"></i> Business Plan Executivo</h4>
+          <p style="font-size: 0.88rem;">Documento completo com Diagnóstico, Mercado, Personas, SWOT, Marketing, Financeiro e Roadmap de Expansão. O "livro do negócio" da Pérola.</p>
         </div>
         <div class="card-item">
-          <h4><i data-lucide="target" style="color: var(--vidi-gold); margin-right: 8px;"></i> 2. Diretrizes do Negócio</h4>
-          <p>Elaboração da matriz SWOT da clínica, declaração da Proposta de Valor e diferenciais competitivos.</p>
+          <h4><i data-lucide="trending-up" style="color: var(--vidi-gold); width:15px; height:15px;"></i> Modelagem Financeira</h4>
+          <p style="font-size: 0.88rem;">DRE projetado (5 anos), Ponto de Equilíbrio, Payback e ROI. Planilhas prontas para apresentação a investidores e instituições financeiras.</p>
         </div>
         <div class="card-item">
-          <h4><i data-lucide="shopping-bag" style="color: var(--vidi-gold); margin-right: 8px;"></i> 3. Mix de Marketing</h4>
-          <p>Definição dos 5 P's, estruturação dos produtos/serviços, estratégias de praça (localização das unidades) e plano de atração.</p>
+          <h4><i data-lucide="target" style="color: var(--vidi-gold); width:15px; height:15px;"></i> Plano de Marketing</h4>
+          <p style="font-size: 0.88rem;">Estratégia de posicionamento, canais de captação, funil de conversão e identidade de marca do Instituto Pérola para o mercado de expansão.</p>
         </div>
         <div class="card-item">
-          <h4><i data-lucide="dollar-sign" style="color: var(--vidi-gold); margin-right: 8px;"></i> 4. Modelagem Financeira</h4>
-          <p>Fluxo de caixa projetado para 5 anos, estimativas de receita operacional, custos e cálculo do Payback (ROI) da expansão.</p>
+          <h4><i data-lucide="bot" style="color: var(--vidi-gold); width:15px; height:15px;"></i> Ecossistema de IA</h4>
+          <p style="font-size: 0.88rem;">Agentes de SDR e RH configurados e operacionais + Dashboard de KPIs integrado à operação da clínica. Gestão autônoma em escala.</p>
+        </div>
+        <div class="card-item">
+          <h4><i data-lucide="file-check" style="color: var(--vidi-gold); width:15px; height:15px;"></i> COF ou Contrato de Licença</h4>
+          <p style="font-size: 0.88rem;">Instrumento jurídico que formaliza a relação da Pérola com futuros franqueados ou licenciados, protegendo os interesses da matriz.</p>
+        </div>
+        <div class="card-item">
+          <h4><i data-lucide="shield" style="color: var(--vidi-gold); width:15px; height:15px;"></i> Proteção de Marca (INPI)</h4>
+          <p style="font-size: 0.88rem;">Registro da marca "IPO — Instituto Pérola Odontologia" no Instituto Nacional da Propriedade Industrial, blindando o ativo mais valioso da rede.</p>
         </div>
       </div>
     </div>
 
-    <!-- P - Precificação -->
+    <!-- ══ P — PRECIFICAÇÃO ══ -->
     <div class="section-card">
-      <div class="mapca-badge">P. Precificação & Escopo</div>
+      <div class="mapca-badge">P. Precificação &amp; Escopo</div>
       <h2>Investimento do Projeto</h2>
-      <p>Em virtude da forte sinergia e do <em>networking</em> estratégico estabelecido, os valores apresentam uma <strong>condição exclusiva de parceria</strong>, focando 100% no investimento para estruturação integral do projeto.</p>
-      
+      <p>Em virtude da forte sinergia e do <em>networking</em> estratégico estabelecido, os valores apresentam uma <strong>condição exclusiva de parceria</strong>, concentrando 100% do investimento na estruturação integral do projeto — sem surpresas ou cobranças variáveis durante a execução.</p>
+
       <div class="preco-box">
-        <h3>Escopo Fechado</h3>
-        <p style="margin-bottom: 0;">Plano de Negócio Estruturado (8 encontros) + Implantação de IA Embarcada + Apoio à Expansão Societária.</p>
+        <h3 style="color: var(--vidi-text-muted); font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0;">Escopo Fechado — Projeto Completo</h3>
         <span class="currency">R$ 72.000,00</span>
-        <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 0;">*Cronograma de pagamentos a definir.</p>
+        <div class="scope-items">
+          <div class="scope-item"><i data-lucide="check-circle" style="width:16px; height:16px;"></i> Business Plan Completo (8 Sprints)</div>
+          <div class="scope-item"><i data-lucide="check-circle" style="width:16px; height:16px;"></i> Modelagem Financeira (DRE 5 anos + Payback)</div>
+          <div class="scope-item"><i data-lucide="check-circle" style="width:16px; height:16px;"></i> Implantação do Ecossistema de IA (SDR + RH + Orquestrador)</div>
+          <div class="scope-item"><i data-lucide="check-circle" style="width:16px; height:16px;"></i> Apoio à Formatação Jurídica da Expansão</div>
+          <div class="scope-item"><i data-lucide="check-circle" style="width:16px; height:16px;"></i> Assessoria no Registro de Marca (INPI)</div>
+        </div>
+        <p style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 0;">* Cronograma de pagamento a ser definido entre as partes. Proposta válida por 15 dias.</p>
       </div>
     </div>
 
-    <!-- FOOTER VIDI -->
+    <!-- ══ FOOTER ══ -->
     <div class="footer-vidi">
-      <p>Desenvolvido por <span>VIDI</span></p>
-      <p style="font-size: 0.8rem; opacity: 0.4;">Proposta Comercial Confidencial - Pérola Odontologia</p>
+      <div class="brand">VIDI</div>
+      <p style="margin-top: 8px; font-size: 0.85rem;">Consultoria Estratégica &amp; Inovação</p>
+      <p style="font-size: 0.75rem; opacity: 0.35; margin-top: 6px;">Proposta Comercial Confidencial — Instituto Pérola Odontologia (IPO)</p>
     </div>
 
   </div>
 
-  <script>
-    lucide.createIcons();
-  </script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>
